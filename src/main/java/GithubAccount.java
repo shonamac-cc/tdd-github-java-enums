@@ -13,4 +13,8 @@ public class GithubAccount {
         this.account = account;
         this.repositories = new HashMap<String, Repository>();
     }
+
+    public AccountType getAccountType() {
+        return this.account;
+    }
 }
