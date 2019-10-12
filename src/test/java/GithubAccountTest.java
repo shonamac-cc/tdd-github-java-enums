@@ -5,49 +5,65 @@ import static org.junit.Assert.assertEquals;
 
 public class GithubAccountTest {
 
-    private GithubAccount githubAccount;
+    private GithubAccount account;
     private Repository repo;
 
     @Before
     public void before(){
-        githubAccount = new GithubAccount("shonamac", "shona mckenzie");
+        account = new GithubAccount("shonamac", "shona mckenzie");
         repo = new Repository("diveinventory", "stock inventory", RepositoryType.PUBLIC);
+
+        account.addRepository(repo);
     }
 
     @Test
     public void getAccountType(){
-        assertEquals(AccountType.FREE, githubAccount.getAccountType());
+        assertEquals(AccountType.FREE, account.getAccountType());
     }
 
     @Test
     public void getAccountName(){
-        assertEquals("shona mckenzie", githubAccount.getName());
+        assertEquals("shona mckenzie", account.getName());
     }
 
     @Test
     public void getAccountUserName(){
-        assertEquals("shonamac", githubAccount.getUserName());
+        assertEquals("shonamac", account.getUserName());
     }
 
     @Test
     public void upgradeAccount(){
-        githubAccount.upgradeAccount();
-        assertEquals(AccountType.PRO, githubAccount.getAccountType());
+        account.upgradeAccount();
+        assertEquals(AccountType.PRO, account.getAccountType());
     }
 
     @Test
     public void downgradeAccount(){
-        githubAccount.upgradeAccount();
-        githubAccount.downgradeAccount();
-        assertEquals(AccountType.FREE, githubAccount.getAccountType());
+        account.upgradeAccount();
+        account.downgradeAccount();
+        assertEquals(AccountType.FREE, account.getAccountType());
     }
 
-
 //    @Test
-//    public void getRepositoryName(){
-//        assertEquals(repo, githubAccount.getRepositoryName("diveinventory"));
+//    public void canAddRepository(){
+//        account.addRepository(repo);
+//        assertEquals(repo, account.getRepositoryName("diveinventory"));
 //    }
 
+    @Test
+    public void getRepositoryName(){
+        assertEquals(repo, account.getRepositoryName("diveinventory"));
+    }
+
+//    @Test
+//    public void getRepositoryDescription(){
+//        assertEquals(repo, account.getRepositoryDescription());
+//    }
+
+    @Test
+    public void canGetNumberOfRepositories(){
+        assertEquals(1, account.countRepositories());
+    }
 
 
 

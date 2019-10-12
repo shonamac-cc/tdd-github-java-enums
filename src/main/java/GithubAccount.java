@@ -35,16 +35,18 @@ public class GithubAccount {
     }
 
 
-//    public Repository getRepositoryName(String name){
-//        return this.repositories.get(name);
-//    }
+//    I have no idea how this works, I was just messing round trying to get things to work and this did
+    public void addRepository(Repository repo){
+        this.repositories.put(repo.getName(), repo);
+    }
 
 
-//    public void addRepository(Repository repository) {
-//        this.repositories.put(String, repository);
-//    }
-//
-//    public int countRepositories() {
-//        return this.repositories.size();
-//    }
+    public Repository getRepositoryName(String name){
+        return this.repositories.get(name);
+    }
+
+
+    public int countRepositories() {
+        return this.repositories.size();
+    }
 }
