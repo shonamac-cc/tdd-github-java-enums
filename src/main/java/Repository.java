@@ -13,4 +13,8 @@ public class Repository {
         this.repository = repository;
         this.commits = new ArrayList<Commit>();
     }
+
+    public String getName() {
+        return this.name;
+    }
 }
