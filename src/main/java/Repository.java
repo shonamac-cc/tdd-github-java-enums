@@ -4,17 +4,25 @@ public class Repository {
 
     private String name;
     private String description;
-    private RepositoryType repository;
+    private RepositoryType repositoryType;
     private ArrayList<Commit> commits;
 
-    public Repository(String name, String description, RepositoryType repository){
+    public Repository(String name, String description, RepositoryType repositoryType){
         this.name = name;
         this.description = description;
-        this.repository = repository;
+        this.repositoryType = repositoryType;
         this.commits = new ArrayList<Commit>();
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public RepositoryType getType() {
+        return this.repositoryType;
     }
 }
