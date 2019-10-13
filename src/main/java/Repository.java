@@ -64,4 +64,13 @@ public class Repository {
             }
         }return foundCommit;
     }
+
+    public ArrayList<Commit> getAllCommitsByType(CommitType feature) {
+        ArrayList<Commit> foundAllCommits = new ArrayList<Commit>();
+        for (Commit commit : this.commits){
+            if (commit.getCommitType() == feature){
+                foundAllCommits.add(commit);
+            }
+        }return foundAllCommits;
+    }
 }
