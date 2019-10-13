@@ -2,9 +2,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class RepositoryTest {
@@ -69,6 +66,7 @@ public class RepositoryTest {
         repo.addCommit(commit2);
         repo.addCommit(commit3);
         repo.addCommit(commit4);
-        assertEquals(commit, repo.getAllCommitsByType(CommitType.FEATURE));
+//        assertEquals(commit, repo.getAllCommitsByType(CommitType.FEATURE));
+        assertEquals(2, repo.getAllCommitsByType(CommitType.FEATURE).size());
     }
 }

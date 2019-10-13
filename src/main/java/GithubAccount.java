@@ -34,17 +34,14 @@ public class GithubAccount {
         this.accountType = AccountType.FREE;
     }
 
-
 //    I have no idea how this works, I was just messing round trying to get things to work and this did
     public void addRepository(Repository repo){
         this.repositories.put(repo.getName(), repo);
     }
 
-
     public Repository getRepositoryName(String name){
         return this.repositories.get(name);
     }
-
 
     public int countRepositories() {
         return this.repositories.size();
