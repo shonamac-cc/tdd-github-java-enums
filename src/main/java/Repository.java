@@ -47,23 +47,23 @@ public class Repository {
         }return foundCommit;
     }
 
+
     public String getCommitDescriptionById(int uniqueId){
-        String foundCommit = null;
-        for (Commit commit : this.commits){
-            if (commit.getId() == uniqueId){
-                foundCommit = commit.getDescription();
-            }
-        }return foundCommit;
+        return getCommitById(uniqueId).getDescription();
+
+
     }
 
-    public Commit getCommitByType(CommitType feature) {
-        Commit foundCommit = null;
-        for (Commit commit : this.commits){
-            if (commit.getCommitType() == feature){
-                foundCommit = commit;
-            }
-        }return foundCommit;
-    }
+
+//    no longer needed
+//    public Commit getCommitByType(CommitType feature) {
+//        Commit foundCommit = null;
+//        for (Commit commit : this.commits){
+//            if (commit.getCommitType() == feature){
+//                foundCommit = commit;
+//            }
+//        }return foundCommit;
+//    }
 
     public ArrayList<Commit> getAllCommitsByType(CommitType feature) {
         ArrayList<Commit> foundAllCommits = new ArrayList<Commit>();
